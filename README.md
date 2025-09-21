@@ -5,7 +5,6 @@ This project is an authentication microservice for the Insurance Premium Calcula
 ## Features
 - User registration and authentication
 - JWT-based token authentication
-- Account management endpoints
 
 ## Project Structure
 - `auth_project/`: Django project configuration
@@ -40,7 +39,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
 ## Example API Usage
 
 ### Registration
-- **URL:** `/accounts/register/`
+- **URL:** `/auth/register/`
 - **Method:** POST
 - **Request Body:**
   ```json
@@ -60,7 +59,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
   ```
 
 ### Login (JWT Token Obtain)
-- **URL:** `/accounts/token/`
+- **URL:** `/auth/login/`
 - **Method:** POST
 - **Request Body:**
   ```json
@@ -77,8 +76,25 @@ This project is an authentication microservice for the Insurance Premium Calcula
   }
   ```
 
+  ### Refresh Token (New Access Token Obtain)
+- **URL:** `/auth/login/`
+- **Method:** POST
+- **Request Body:**
+  ```json
+  {
+    "refresh": "string",
+  }
+  ```
+- **Response:**
+  ```json
+  {
+    "refresh": "<refresh_token>",
+    "access": "<access_token>"
+  }
+  ```
+
 ### Get User Profile
-- **URL:** `/accounts/profile/`
+- **URL:** `/auth/user/:id`
 - **Method:** GET
 - **Headers:**
   - `Authorization: Bearer <access_token>`
@@ -95,3 +111,5 @@ This project is an authentication microservice for the Insurance Premium Calcula
 - Recommended IDE: PyCharm
 - Python version: 3.12+
 
+## Postman Collection
+https://.postman.co/workspace/My-Workspace~198fa8b8-77fe-4e2d-806b-8fd72254351a/folder/46430376-02c13b25-c218-410e-8c66-35842ba80151?action=share&creator=46430376&ctx=documentation&active-environment=46430376-d2beb181-8c76-457f-abef-9c9dd95b265b
