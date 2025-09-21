@@ -33,7 +33,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
    ```
 
 ## Usage
-- Access API endpoints via `/accounts/` URLs.
+- Access API endpoints via `/auth/` URLs.
 - Use JWT tokens for authentication.
 
 ## Example API Usage
@@ -77,7 +77,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
   ```
 
   ### Refresh Token (New Access Token Obtain)
-- **URL:** `/auth/login/`
+- **URL:** `/auth/refresh/`
 - **Method:** POST
 - **Request Body:**
   ```json
