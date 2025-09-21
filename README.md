@@ -112,4 +112,5 @@ This project is an authentication microservice for the Insurance Premium Calcula
 - Python version: 3.12+
 
 ## Postman Collection
-https://.postman.co/workspace/My-Workspace~198fa8b8-77fe-4e2d-806b-8fd72254351a/folder/46430376-02c13b25-c218-410e-8c66-35842ba80151?action=share&creator=46430376&ctx=documentation&active-environment=46430376-d2beb181-8c76-457f-abef-9c9dd95b265b
+The Postman collection for this API is included in the repository as `insurance.postman_collection.json`.
+
