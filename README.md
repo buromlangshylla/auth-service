@@ -5,7 +5,6 @@ This project is an authentication microservice for the Insurance Premium Calcula
 ## Features
 - User registration and authentication
 - JWT-based token authentication
-- Account management endpoints
 
 ## Project Structure
 - `auth_project/`: Django project configuration
@@ -34,13 +33,13 @@ This project is an authentication microservice for the Insurance Premium Calcula
    ```
 
 ## Usage
-- Access API endpoints via `/accounts/` URLs.
+- Access API endpoints via `/auth/` URLs.
 - Use JWT tokens for authentication.
 
 ## Example API Usage
 
 ### Registration
-- **URL:** `/accounts/register/`
+- **URL:** `/auth/register/`
 - **Method:** POST
 - **Request Body:**
   ```json
@@ -60,7 +59,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
   ```
 
 ### Login (JWT Token Obtain)
-- **URL:** `/accounts/token/`
+- **URL:** `/auth/login/`
 - **Method:** POST
 - **Request Body:**
   ```json
@@ -77,8 +76,25 @@ This project is an authentication microservice for the Insurance Premium Calcula
   }
   ```
 
+  ### Refresh Token (New Access Token Obtain)
+- **URL:** `/auth/refresh/`
+- **Method:** POST
+- **Request Body:**
+  ```json
+  {
+    "refresh": "string",
+  }
+  ```
+- **Response:**
+  ```json
+  {
+    "refresh": "<refresh_token>",
+    "access": "<access_token>"
+  }
+  ```
+
 ### Get User Profile
-- **URL:** `/accounts/profile/`
+- **URL:** `/auth/user/:id`
 - **Method:** GET
 - **Headers:**
   - `Authorization: Bearer <access_token>`
@@ -94,4 +110,7 @@ This project is an authentication microservice for the Insurance Premium Calcula
 ## Development
 - Recommended IDE: PyCharm
 - Python version: 3.12+
+
+## Postman Collection
+The Postman collection for this API is included in the repository as `insurance.postman_collection.json`.
 
